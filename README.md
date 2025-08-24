@@ -1,6 +1,9 @@
 # OPA Test Container (with ocov)
 
+
 This container provides a lightweight environment for testing [Open Policy Agent (OPA)](https://www.openpolicyagent.org/) policies with coverage reporting using [`ocov`](https://github.com/C5T/ocov).
+
+**Special thanks to the authors of the [`ocov`](https://github.com/C5T/ocov) project for making coverage reporting for OPA so accessible and user-friendly. This project would not be possible without their excellent work.**
 
 ## Features
 - OPA CLI (latest release)
