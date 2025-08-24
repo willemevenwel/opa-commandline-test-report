@@ -1,0 +1,22 @@
+name: CI: Build and Test with Docker
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build --platform=linux/amd64 -t opa-test .
+
+      - name: Run tests
+        run: |
+          docker run --rm opa-test opa test policies/ tests/ test_data/ --coverage | ocov
